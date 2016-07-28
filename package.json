@@ -1,7 +1,7 @@
 {
-  "name": "koa-es7-boilerplate",
-  "version": "0.4.0",
-  "description": "A boilerplate for writing Koa 2 apps in ES7 with Babel and Node 6.",
+  "name": "westfieldlabs-analytics-service",
+  "version": "0.1.0",
+  "description": "REST service for application level event tracking",
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.8"
@@ -12,12 +12,18 @@
     "dev": "nodemon src/bin/server.js",
     "debug": "icebug src/bin/server.js",
     "debug-brk": "npm run debug -- --break",
+    "manage:migrations": "knex migrate:latest",
     "test": "mocha test/**/*.js --compilers js:babel-register --require test/_helpers",
     "test-watch": "npm run test -- --watch",
     "lint": "eslint src/ test/",
     "lint-watch": "esw -w src/ test/"
   },
-  "author": "Jeff Hansen",
+  "author": "Westfield Labs",
+  "contributors": [
+    {
+      "name": "David Marr"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "app-module-path": "^1.1.0",
@@ -26,12 +32,14 @@
     "babel-register": "^6.9.0",
     "glob": "^7.0.5",
     "kcors": "^1.2.1",
+    "knex": "^0.11.9",
     "koa": "^2.0.0-alpha.3",
     "koa-bodyparser": "^3.0.0",
     "koa-convert": "^1.2.0",
     "koa-respond": "^1.0.0",
     "koa-router": "^7.0.1",
     "lodash": "^4.13.1",
+    "pg": "^6.0.3",
     "source-map-support": "^0.4.1",
     "yenv": "^1.0.0"
   },

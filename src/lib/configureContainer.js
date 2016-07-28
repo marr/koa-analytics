@@ -5,6 +5,7 @@ import { createContainer, Lifetime } from 'awilix';
  * will be loaded.
  */
 const modulesToLoad = [
+  'db/*.js',
   'services/*.js'
 ];
 
