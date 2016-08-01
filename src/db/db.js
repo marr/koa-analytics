@@ -1,10 +1,7 @@
-const yenv = require('yenv');
-
 // Default filename is env.yaml.
-const env = yenv();
 const connection = process.env.PG_CONNECTION_STRING || {
-  host: env.DB_HOST,
-  database: env.DB_NAME
+  host: process.env.DB_HOST || '127.0.0.1',
+  database: process.env.DB_NAME || 'analytics'
 };
 
 const config = {

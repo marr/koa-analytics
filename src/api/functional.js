@@ -1,5 +1,4 @@
-import env from 'lib/env';
-import { makeInvoker } from 'middleware/invocation';
+import { makeInvoker } from '../middleware/invocation';
 
 /**
  * Makes an object with the API endpoints.
@@ -18,7 +17,7 @@ const makeFunctionalApi = ({ someService }) => {
     const data = await someService.getStuff('What is the universe?');
 
     // .ok comes from responseCalls.js middleware.
-    return ctx.ok({ data, testing: env.TESTING });
+    return ctx.ok({ data });
   };
 
   // Another API method

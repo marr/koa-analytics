@@ -1,4 +1,4 @@
-import { makeClassInvoker } from 'middleware/invocation';
+import { makeClassInvoker } from '../middleware/invocation';
 
 class ClassesAPI {
   constructor({ classService }) {

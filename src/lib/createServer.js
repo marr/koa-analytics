@@ -6,8 +6,8 @@ import respond from 'koa-respond';
 import createApis from './createApis';
 import getConfiguredContainer from './configureContainer';
 import bodyParser from 'koa-bodyparser';
-import notFoundHandler from 'middleware/notFound';
-import containerScope from 'middleware/containerScope';
+import notFoundHandler from '../middleware/notFound';
+import containerScope from '../middleware/containerScope';
 
 /**
  * Creates and returns a new Koa application.

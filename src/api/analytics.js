@@ -1,5 +1,4 @@
-import env from 'lib/env';
-import { makeInvoker } from 'middleware/invocation';
+import { makeInvoker } from '../middleware/invocation';
 
 /**
  * Makes an object with the API endpoints.
@@ -16,7 +15,7 @@ const makeFunctionalApi = ({ analytics }) => {
     const data = await analytics.trackEvent(ctx.request.body);
 
     // .ok comes from responseCalls.js middleware.
-    return ctx.ok({ data, testing: env.TESTING });
+    return ctx.ok({ data });
   };
 
   return {
