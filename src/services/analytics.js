@@ -3,12 +3,13 @@ export default class Analytics {
     this.db = db;
   }
 
-  trackEvent({ category, action, label, value }) {
+  trackEvent({ category, action, label, value }, user) {
     return this.db('events').insert({
       category,
       action,
       label,
-      value
+      value,
+      user
     });
   }
 }

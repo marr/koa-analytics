@@ -4,7 +4,7 @@
   "plugins": ["transform-runtime"],
   "env": {
     "production": {
-      "plugins": ["source-map-support"]
+      "plugins": []
     }
   }
 }

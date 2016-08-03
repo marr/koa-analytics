@@ -12,7 +12,9 @@ import { makeInvoker } from '../middleware/invocation';
 const makeFunctionalApi = ({ analytics }) => {
   // Analytics tracking
   const trackEvent = async (ctx) => {
-    const data = await analytics.trackEvent(ctx.request.body);
+    const [ _, authHeader ] = ctx.headers.authorization.split(' ');
+    const [ user ] = Buffer.from(authHeader, 'base64').toString().split(':');
+    const data = await analytics.trackEvent(ctx.request.body, user);
 
     // .ok comes from responseCalls.js middleware.
     return ctx.ok({ data });
